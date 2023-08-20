@@ -6,7 +6,7 @@ export default async function Command({ launchContext }) {
   if (!launchContext?.noUpdate) {
     counter++;
     await LocalStorage.setItem("counter", counter);
-    await launchCommand({ name: "decrement-counter", type: LaunchType.Background, context: { noUpdate: true } });
+    await launchCommand({ name: "increment-counter", type: LaunchType.Background, context: { noUpdate: true } });
   }
   await updateCommandMetadata({ subtitle: `Value: ${counter}` });
 }
